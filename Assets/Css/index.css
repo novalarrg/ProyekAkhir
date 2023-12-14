@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 28px;
+}
+
 * {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
@@ -102,18 +107,16 @@ nav.navbar ul li a:hover {
 
 /* Awal Main Content */
 main {
-    padding: 60px 110px;
+    padding: 60px 98px;
 }
 
-main .content {
+main .content-hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
 }
 
 main .content .main-hero {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -121,7 +124,7 @@ main .content .main-hero {
 }
 
 main .content .main-hero h1 {
-    color: var(--Text, #0E0D13);
+    color: #0E0D13;
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -130,8 +133,6 @@ main .content .main-hero h1 {
 
 main .content .main-hero p {
     font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
     letter-spacing: 0.32px;
 }
 
@@ -189,7 +190,10 @@ main .second-content .alasan-memilih .mitra {
     gap: 1.2rem;
 }
 
-/* Style Cari Pilihan Bootcamp */
+/* Akhir Second content whywe? */
+
+
+/* Awal Style Cari Pilihan Bootcamp */
 main .card-content {
     margin-top: 160px;
 }
@@ -208,8 +212,6 @@ main .card-content #cardContainer {
 
 main .card-content #cardContainer .card {
     flex: 1 0 calc(15% - 20px);
-    /* 25% dari lebar container, dengan jarak margin 20px */
-    /* Memberikan jarak antar kartu */
     box-sizing: border-box;
     text-align: center;
 
@@ -226,6 +228,9 @@ main .card-content #cardContainer .card img {
     width: 250px;
     height: 200px;
 }
+
+/* Akhir Style Cari Pilihan Bootcamp */
+
 
 /* Benefit section */
 main .benefit-section {
@@ -266,78 +271,38 @@ main .benefit-section .terhubung {
 /* Event Content CSS */
 main .event-content {
     margin-top: 160px;
-    padding: 24px;
     border-radius: 12px;
 
     background: rgba(156, 138, 240, 0.15);
     width: 100%;
 }
 
+main .event-content h1 {
+    padding: 12px 0 0 12px;
+}
+
 main .event-content p {
     margin-bottom: 38px;
+
+    padding: 0 0 0 12px;
 }
 
 main .event-content .event-card {
     display: flex;
     flex-wrap: wrap;
 
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 main .event-content .event-card img {
     height: 230px;
 }
 
-/* Styling Footer */
-footer {
-    width: 100%;
-    height: 250px;
-    padding-top: 32px;
-
-    display: flex;
-    justify-content: space-around;
-
-    color: white;
-    border-top: 1px solid #9C8AF0;
-    background: #5940CB;
-    box-shadow: 0px -2px 2px 0px rgba(156, 138, 240, 0.45);
-}
-
-
-footer a {
-    text-decoration: none;
-    color: #ffffffb5;
-}
-
-footer div h2 {
-    margin-bottom: 12px;
-}
-
-footer .situs button {
-    padding: 8px 20px;
-    margin-right: 12px;
-
-    border: 1px solid white;
-    border-radius: 6px;
-    background-color: transparent;
-}
-
-
-footer .ketentuan div {
-    display: flex;
-    flex-direction: column;
-}
-
-
 /* Syling aside */
 aside {
     display: flex;
-    justify-content: center;
-    padding: 0 48px;
     column-gap: 24px;
-
     margin: 100px 0;
-    width: auto;
 }
 
 aside .biodata-card {
@@ -346,7 +311,6 @@ aside .biodata-card {
     align-items: center;
 
     flex: 1;
-
     background-color: rgba(156, 138, 240, 0.15);
 
     border-radius: 16px;
@@ -423,9 +387,77 @@ aside .tentang .tentang-deskripsi .membedakan span {
     font-weight: 700;
 }
 
+/* Styling Footer */
+footer {
+    width: 100%;
+    height: 250px;
+    padding-top: 32px;
+
+    display: flex;
+    justify-content: space-around;
+
+    color: white;
+    border-top: 1px solid #9C8AF0;
+    background: #5940CB;
+    box-shadow: 0px -2px 2px 0px rgba(156, 138, 240, 0.45);
+}
+
+
+footer a {
+    text-decoration: none;
+    color: #ffffffb5;
+}
+
+footer div h2 {
+    margin-bottom: 12px;
+}
+
+footer .situs button {
+    padding: 8px 20px;
+    margin-right: 12px;
+
+    border: 1px solid white;
+    border-radius: 6px;
+    background-color: transparent;
+}
+
+
+footer .ketentuan div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
 
 /* Responsive Navbar */
+@media screen and (max-width: 1024px) {
+    main {
+        padding: 60px 48px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    main {
+        padding: 60px 28px;
+    }
+
+    main aside .biodata-card img {
+        height: 150px;
+    }
+
+    main aside .biodata-card span {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    main .event-content .event-card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .container-header {
         flex-direction: column;
         padding: 12px;
@@ -439,10 +471,9 @@ aside .tentang .tentang-deskripsi .membedakan span {
         display: none;
     }
 
-    main .content {
+    main .content-hero {
         flex-wrap: wrap;
     }
-
 
     main .content .main-image {
         order: -1;
@@ -483,7 +514,6 @@ aside .tentang .tentang-deskripsi .membedakan span {
         justify-content: center;
         flex-direction: column;
 
-        padding: 2px;
     }
 
 }
@@ -510,6 +540,7 @@ aside .tentang .tentang-deskripsi .membedakan span {
     /* Navbar Responsive */
 
     /* Text hero Responsive */
+
     main .content .main-hero h1 {
         font-size: 32px;
     }
@@ -525,6 +556,10 @@ aside .tentang .tentang-deskripsi .membedakan span {
 
     main .benefit-section img {
         height: 210px;
+    }
+
+    main .event-content {
+        padding: 6px;
     }
 
     aside {
